@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
-import userRoutes from './routes/userRoutes.js'; // 👈 import user routes
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ connectDB();
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes); // 👈 add this line
+app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => res.send('API is running...'));
 
